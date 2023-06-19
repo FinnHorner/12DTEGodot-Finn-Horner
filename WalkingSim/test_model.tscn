@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://0axh5tn1rfa6"]
+
+[ext_resource type="PackedScene" uid="uid://iq2ok8umamaq" path="res://TestModel.blend" id="1_jrmoa"]
+
+[node name="TestModel" instance=ExtResource("1_jrmoa")]
