@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://b06t4n1knixdo"]
+
+[ext_resource type="PackedScene" uid="uid://c47kejw0a8b4f" path="res://grass.blend" id="1_7ko7e"]
+[ext_resource type="Shader" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="2_giknd"]
+[ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="3_ded44"]
+[ext_resource type="Texture2D" uid="uid://i566v0wqsfa" path="res://addons/simplegrasstextured/images/win_pattern.png" id="4_nqcsp"]
+[ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="5_us4v6"]
+[ext_resource type="ArrayMesh" uid="uid://2aciy8mhqn0e" path="res://retro_house_pack/models/obj/house1.obj" id="6_0kvxj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v8l7"]
+render_priority = 0
+shader = ExtResource("2_giknd")
+shader_parameter/player_pos = Vector3(1e+06, 1e+06, 1e+06)
+shader_parameter/player_radius = 0.5
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/scale_h = 1.2
+shader_parameter/scale_w = 1.5
+shader_parameter/scale_var = -0.25
+shader_parameter/grass_strength = 0.8
+shader_parameter/wind_dir = Vector3(1, 0, 0)
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_turbulence = 1.0
+shader_parameter/optimization_by_distance = false
+shader_parameter/optimization_level = 7.0
+shader_parameter/optimization_dist_min = 10.0
+shader_parameter/optimization_dist_max = 50.0
+shader_parameter/grass_size_y = 1.0
+shader_parameter/texture_albedo = ExtResource("3_ded44")
+shader_parameter/wind_pattern = ExtResource("4_nqcsp")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_44xx8"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1.00001, 1),
+"attribute_data": PackedByteArray(255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 128, 63, 255, 0, 0, 255, 0, 0, 128, 63, 0, 0, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 128, 63, 255, 0, 0, 255, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 4123,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
+"material": SubResource("ShaderMaterial_1v8l7"),
+"primitive": 3,
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 191, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 255, 127)
+}]
+
+[sub_resource type="MultiMesh" id="MultiMesh_dh8qa"]
+transform_format = 1
+mesh = SubResource("ArrayMesh_44xx8")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="grass" parent="." instance=ExtResource("1_7ko7e")]
+transform = Transform3D(0.874366, 0, 0, 0, 1, 0, 0, 0, 0.999984, 0, 0, 0)
+
+[node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="grass"]
+multimesh = SubResource("MultiMesh_dh8qa")
+script = ExtResource("5_us4v6")
+texture_albedo = ExtResource("3_ded44")
+scale_h = 1.2
+scale_w = 1.5
+wind_pattern = ExtResource("4_nqcsp")
+sgt_radius = 10.0
+sgt_density = 200
+sgt_scale = 1.0
+sgt_rotation = 0.0
+sgt_rotation_rand = 1.0
+sgt_dist_min = 0.0
+sgt_follow_normal = false
+metadata/SimpleGrassTextured = "1.0.2"
+
+[node name="House1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.182133, 0, 0.983274, 0, 1, 0, -0.983274, 0, 0.182133, -121.216, 0.874071, 5.97941)
+mesh = ExtResource("6_0kvxj")
