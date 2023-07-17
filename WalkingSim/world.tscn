@@ -12,6 +12,7 @@ sky_material = SubResource("ProceduralSkyMaterial_rvmfo")
 
 [sub_resource type="Environment" id="Environment_u4uoj"]
 background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_mdrpa")
 tonemap_mode = 2
 glow_enabled = true
@@ -22,7 +23,8 @@ glow_enabled = true
 transform = Transform3D(0.999976, 0.00694599, -0.000128577, -0.00694598, 0.999976, 2.30594e-05, 0.000128726, -2.21804e-05, 1, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -420.839, 382.598, -413.757)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
