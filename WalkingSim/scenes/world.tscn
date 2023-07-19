@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dr7f7l0aub326"]
 
-[ext_resource type="PackedScene" uid="uid://iq2ok8umamaq" path="res://TestModel.blend" id="1_gq43d"]
-[ext_resource type="PackedScene" uid="uid://bm7804dus7yeb" path="res://player.tscn" id="2_mog23"]
+[ext_resource type="PackedScene" uid="uid://iq2ok8umamaq" path="res://scenes/TestModel.blend" id="1_gq43d"]
+[ext_resource type="PackedScene" uid="uid://bm7804dus7yeb" path="res://scenes/player.tscn" id="2_mog23"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvmfo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

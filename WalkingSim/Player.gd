@@ -45,3 +45,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, FRICTION)
 
 	move_and_slide()
+	
+func process_input(delta):
+	if Input.is_action_pressed("toggle_flashlight"):
+		$SpotLight3D.visable = not $SpotLight3D.visble 
+	
+

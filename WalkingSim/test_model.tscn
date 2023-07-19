@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://0axh5tn1rfa6"]
 
-[ext_resource type="PackedScene" uid="uid://iq2ok8umamaq" path="res://TestModel.blend" id="1_hnxry"]
+[ext_resource type="PackedScene" uid="uid://iq2ok8umamaq" path="res://scenes/TestModel.blend" id="1_hnxry"]
 [ext_resource type="Texture2D" uid="uid://cobbvpxetwgrp" path="res://TestTextures/Grass/SBS - Tiny Texture Pack 3 - Medium/256x256/Metal/Metal_19-256x256.png" id="2_lhsqx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ud7q1"]
